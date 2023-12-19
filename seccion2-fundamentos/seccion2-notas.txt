@@ -1,0 +1,35 @@
+Temas puntuales de la sección
+En esta sección quiero que nos enfoquemos en varias introducciones a Node, puntualmente veremos:
+
+Preguntas comunes sobre Node
+
+Hola Mundo en Node
+
+Laboratorio con FileSystem
+
+Code Execution
+
+Event Loop
+
+Tengan presente que el curso es 99% practico, pero la mayor parte de las presentaciones están en esta sección, porque me interesa que conozcamos el por qué de muchas cosas que sucederán cuando estén trabajando con Node en la vida real.
+****************************************************************************************************************
+
+node: ambiente de ejecución de javascript, alternativa a su ejecución en el navegador. 
+      cuenta con motor v8 de google. Realiza tareas de entradas y salidas, junto a manejo de archivos de la computadora cliente / servidor. Gracias a libuv node puede ejecutar varios procesos en paralelo.(ASINCRONÍA)
+
+
+Características:
+
+-->Asincronía
+-->Módulos nativos y de terceros
+-->Gestión de paquetes con NPM
+-->Construcción de servidores
+-->Escalabilidad
+-->Múltiple plataforma
+-->BLOKING
+-->NON-BLOCKING I/O
+
+-->Pregunta: Si dos tareas asíncronas como setTimeout y readFile se completan alm mismo tiempo, 
+      ¿cómo decide Node que callback ejecutar primero en la pila de llamadas? ¿Uno tiene prioridad sobre el otro?
+-->Respuesta: Los callbacks de temporizador se ejecutan antes que las devoluciones de llamada de I/O, incluso,
+      si ambas están listas exactamente al mismo tiempo.

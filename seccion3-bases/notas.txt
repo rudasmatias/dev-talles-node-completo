@@ -1,0 +1,96 @@
+Temas puntuales de la sección
+En esta sección veremos generalidades de Node y a la vez, aprovechamos para explicar ciertos conceptos de JavaScript que son necesarios para casi cualquier aplicación de Node.
+
+Puntualmente veremos:
+
+Package.jso
+Node Modules
+Scripts
+Importaciones y Exportaciones
+Módulos
+Reforzamiento de JS
+Callbacks
+Arrow Functions
+Factory Functions
+Promises
+Async Await
+Peticiones Http básicas
+Dependencias de Producción y Desarrollo
+Patrón adaptador para nuestras dependencias
+
+
+Esta sección es altamente recomendada para todos los que están empezando con NodeJS, y a la vez, sirve para refrescar un poco la memoria sobre JavaScript.
+
+Creación de app de node --> npm init o npm init -y (crea todo por defecto)
+Siempre que vea un archivo package.json es una aplicación de node. Poder de manejar y gestionar archivos.
+Nos dice:
+        -->Comandos a usar para construir , levantar, desarrollar la app, staging
+        -->Luego del READ.me se leen scripts
+
+La aplicación va a vivir dentro de una carpeta llamada src
+
+npm start es un comando especial de node --> Siempre es el que levanta la Producción.
+npm run .... --> para los demás Comandos.
+
+Siempre tenemos que tener la filosofia de responsabilidad única.
+
+exportación: module.exports = {
+        nombreVariable1: variable1,
+        nombreVariable2: variable2,
+}
+
+importación: const {nombreVariable1, nombreVariable2} = require("./path")
+
+Dependencias de desarrollo son aquellas que nunca van a llegar a Producción.
+Para instalar una dependencia de desarrollo es:
+-->npm i --save-dev nombreDependencia
+
+El objeto process de node son una serie de funciones y depencias. 
+Es un proceso que está corriendo en cualquier app de node.
+El uso más común de utilizar son las variables de environment (variables de entorno)
+-->process.env
+
+Es posible correr el npm run dev de una app en el cmd por si necesitas comodidad en vsc
+
+Factory function es una función que crea otra función.
+
+Tratar de tener las depencias al mínimo.
+
+Aquí hay un ejemplo de destructurin y renombramiento:
+v4 es parte del objeto uuid, y lo renombro con uuid
+const { v4: uuid } = require("uuid");
+
+Consejo cuando se utilizan paquetes de terceros:
+implementar el patron adaptador que use nuestro propio código que lo haga tolerante a cambios, clean arquitecture
+Es decir si esa librería la queremos desechar, no sea complejo. Para esto utilizamos factory function
+(((INVESTIGAR SOBRE ARQUITECTURA DE SOFTWARE)))
+
+Patrón adaptador, evitar que nuestro código esté altamente acoplado y podamos refactorizar o modificar rapidamente
+
+Archivo de barril, cuando se necesita importar cosas de archivos dentro de una misma carpeta. Siempre toma el nombre de index.js
+
+////////**************PAQUETES***********///////////
+
+-->uuid
+
+1. Install
+
+npm install uuid
+2. Create a UUID (ES6 module syntax)
+
+import { v4 as uuidv4 } from 'uuid';
+uuidv4(); // ⇨ '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d'
+... or using CommonJS syntax:
+
+const { v4: uuidv4 } = require('uuid');
+uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
+
+-->age
+
+$ npm install --save get-age
+
+Usage
+var getAge = require('get-age')
+ 
+getAge('1990-01-09')
+// => 25
