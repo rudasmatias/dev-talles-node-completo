@@ -48,17 +48,16 @@ const callback = (error, user) => {
 
 getUserById2(id, callback); */
 
-const getPokemonById = require("./js-foundation/06-promises");
-
 /* getPokemonById(150, (pokemon) => {
   console.log({ pokemon });
 }); */
+
+//TOKEN DE ACCESO
+//PÚBLICAS
+
+const getPokemonById = require("./js-foundation/06-promises");
 
 getPokemonById(150)
   .then((pokemon) => console.log({ pokemon }))
   .catch((error) => console.log("Intente nuevamente"))
   .finally(() => console.log("Finally"));
-
-//TOKEN DE ACCESO
-
-//PÚBLICAS
